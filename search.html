@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Furnitur - Search Results" />
+  <title>FURNITUR | Search Results</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Search-specific CSS -->
+  <link rel="stylesheet" href="search.css" />
+</head>
+
+<body class="search-page">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="main-header">
+    <div class="header-container">
+
+      <!-- Left: Logo + Search + Nav -->
+      <div class="header-left">
+        <a href="index.html" class="logo-container">
+          <img src="./assets/logo.png" alt="FURNITUR" class="logo-img" />
+        </a>
+
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-input" placeholder="Search something..." />
+        </div>
+
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">HOME</a></li>
+            <li>
+              <a href="search.html" class="nav-link active">
+                SHOP <i class="fa-solid fa-chevron-down nav-chevron"></i>
+              </a>
+            </li>
+            <li><a href="#" class="nav-link">BLOG</a></li>
+            <li><a href="#" class="nav-link">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right: Actions -->
+      <div class="header-actions">
+        <button class="action-btn" id="wishlist-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+        <button class="action-btn" id="cart-btn" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+   <!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" id="mobile-nav-menu">
+  <div class="mobile-nav-close" id="mobile-nav-close"><i class="fa-solid fa-xmark"></i></div>
+
+  <!-- Search inside mobile menu -->
+  <div class="mobile-search-wrapper">
+    <i class="fa-solid fa-magnifying-glass search-icon" id="mobile-search-icon"></i>
+    <input type="text" id="mobile-search-input" placeholder="Search products...">
+  </div>
+
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link active">HOME</a></li>
+    <li><a href="search.html" class="mobile-nav-link">SHOP</a></li>
+    <li><a href="#" class="mobile-nav-link">BLOG</a></li>
+    <li><a href="#" class="mobile-nav-link">ABOUT US</a></li>
+  </ul>
+</div>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="content-area">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-home">Home</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">Furniture</span>
+      </div>
+
+      <!-- Shop Layout -->
+      <div class="shop-layout">
+
+        <!-- ── SIDEBAR ── -->
+        <aside class="shop-sidebar">
+
+          <!-- Category -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title collapsible">
+              CATEGORY <i class="fa-solid fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div class="widget-content">
+              <div class="nested-category-wrap">
+                <div class="main-category-title">
+                  <span>FUNITURE</span>
+                  <i class="fa-solid fa-minus category-minus-icon"></i>
+                </div>
+                <ul class="filter-list category-filter-list">
+                  <li><a href="#" class="filter-link active" data-category="chair">Chair</a></li>
+                  <li><a href="#" class="filter-link" data-category="sofa">Sofa</a></li>
+                  <li><a href="#" class="filter-link" data-category="couch">Couch</a></li>
+                  <li><a href="#" class="filter-link" data-category="desk">Desk</a></li>
+                  <li><a href="#" class="filter-link" data-category="lamp">Lamp</a></li>
+                </ul>
+              </div>
+              <div class="collapsible-sub-category border-top">
+                <span>SHIPPING</span>
+                <i class="fa-solid fa-plus category-plus-icon"></i>
+              </div>
+              <div class="collapsible-sub-category">
+                <span>ALL PRODUCT</span>
+                <i class="fa-solid fa-plus category-plus-icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shop By -->
+          <div class="sidebar-widget no-border-bottom pb-0">
+            <h2 class="sidebar-section-heading">SHOP BY</h2>
+          </div>
+
+          <!-- Materials -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title collapsible">
+              MATERIALS <i class="fa-solid fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div class="widget-content">
+              <ul class="filter-list material-filter-list">
+                <li>
+                  <label class="checkbox-container">Bronze <span class="count-tag">(08)</span>
+                    <input type="checkbox" class="material-checkbox" value="Bronze" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">Oak wood <span class="count-tag">(12)</span>
+                    <input type="checkbox" class="material-checkbox" value="Oak wood" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">Stainless metal <span class="count-tag">(36)</span>
+                    <input type="checkbox" class="material-checkbox" value="Stainless metal" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">Titanium <span class="count-tag">(04)</span>
+                    <input type="checkbox" class="material-checkbox" value="Titanium" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">Alloy <span class="count-tag">(08)</span>
+                    <input type="checkbox" class="material-checkbox" value="Alloy" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">Ceramic <span class="count-tag">(17)</span>
+                    <input type="checkbox" class="material-checkbox" value="Ceramic" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title collapsible">
+              PRICE <i class="fa-solid fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div class="widget-content">
+              <div class="price-slider-container">
+                <div class="slider-track-wrap">
+                  <input type="range" min="0" max="3000" value="2000" class="price-slider" id="price-slider" />
+                </div>
+                <div class="price-values">
+                  <span class="price-range-display">$0 - $<span id="price-max-display">2000</span></span>
+                  <button class="btn btn-sm btn-dark" id="apply-price-btn">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- All Product -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title collapsible">
+              ALL PRODUCT <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </h3>
+            <div class="widget-content hidden">
+              <p class="widget-info-text">Explore overall items in our vault.</p>
+            </div>
+          </div>
+
+          <!-- Size -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title collapsible">
+              SIZE <i class="fa-solid fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div class="widget-content">
+              <ul class="filter-list size-filter-list">
+                <li>
+                  <label class="checkbox-container">S <span class="count-tag">(09)</span>
+                    <input type="checkbox" class="size-checkbox" value="S" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">M <span class="count-tag">(12)</span>
+                    <input type="checkbox" class="size-checkbox" value="M" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-container">L <span class="count-tag">(36)</span>
+                    <input type="checkbox" class="size-checkbox" value="L" />
+                    <span class="checkmark"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Compare -->
+          <div class="sidebar-widget">
+            <h3 class="widget-title collapsible">
+              COMPARE <i class="fa-solid fa-chevron-up toggle-icon"></i>
+            </h3>
+            <div class="widget-content">
+              <p class="widget-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Blandit tristique
+                purus varius donec.</p>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- ── MAIN CATALOG ── -->
+        <div class="shop-content">
+
+          <!-- Hero Banner -->
+          <section class="hero-banner">
+            <div class="hero-content">
+              <span class="hero-subtitle">WELCOME TO OUR</span>
+              <h1 class="hero-title">FURNITURE<br />GALLERY</h1>
+              <p class="hero-desc-subtitle">BROWSE OUR SELECTIONS</p>
+            </div>
+          </section>
+
+          <!-- Controls -->
+          <div class="grid-controls-search">
+            <h2 class="search-result-title" id="search-result-title">RESULT FOR " FURNITURE "</h2>
+            <div class="controls-actions-search">
+              <button class="btn-on-sale" id="on-sale-filter-btn">ON SALE</button>
+              <div class="sort-wrapper-search">
+                <span class="sort-label">Short by:</span>
+                <select id="sort-select" class="sort-select-search">
+                  <option value="default">Default</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="name-asc">Alphabetical: A–Z</option>
+                </select>
+              </div>
+              <div class="view-toggle-search">
+                <button class="view-btn-search" id="list-view-btn" aria-label="List View">
+                  <i class="fa-solid fa-list"></i>
+                </button>
+                <button class="view-btn-search active" id="grid-view-btn" aria-label="Grid View">
+                  <i class="fa-solid fa-border-all"></i>
+                </button>
+              </div>
+              <span class="results-count-search" id="results-count-text">SHOWED 1 - 9 OF 30 PRODUCTS</span>
+            </div>
+          </div>
+
+          <!-- Active filter badges -->
+          <div class="active-badges-list" id="active-filters-badges"></div>
+
+          <!-- Products Grid -->
+          <div class="products-grid" id="catalog-products-container">
+            <!-- JS renders cards here -->
+          </div>
+
+          <!-- Catalog Promo Inset -->
+          <div class="catalog-promo-inset">
+            <div class="catalog-promo-grid">
+              <div class="catalog-promo-text">
+                <h3 class="catalog-promo-title">MORDERN BRONZE<br />HANGING LIGHT</h3>
+                <div class="catalog-promo-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="catalog-promo-old-price">$3252.41</p>
+                <div class="catalog-promo-price-row">
+                  <span class="catalog-promo-new-price">$2352.41</span>
+                  <span class="catalog-promo-badge">-30%</span>
+                </div>
+              </div>
+              <div class="catalog-promo-image">
+                <img src="assets/bronze-hanging-light.png" alt="Bronze Hanging Light" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination-layout">
+            <div class="pagination" id="shop-pagination"></div>
+            <span class="pagination-count-indicator" id="pagination-results-count-text">
+              SHOWED 1 - 9 OF 30 PRODUCTS
+            </span>
+          </div>
+
+        </div><!-- /shop-content -->
+      </div><!-- /shop-layout -->
+    </div><!-- /container -->
+  </main>
+
+  <!-- Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2>YOUR CART (<span id="cart-drawer-count">0</span>)</h2>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items-container" id="cart-items-list"></div>
+    <div class="cart-drawer-footer" id="cart-summary-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="subtotal-price" id="cart-total-price">$0.00</span>
+      </div>
+      <p class="cart-shipping-notice">Shipping and taxes calculated at checkout.</p>
+      <button class="btn btn-primary checkout-btn" id="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- FOOTER SECTION -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col">
+          <h3>CUSTOMER SERVICE</h3>
+          <ul>
+            <li><a href="#">Help & FAQs</a></li>
+            <li><a href="#">Return & Refund</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Customs and Taxes</a></li>
+            <li><a href="#">Customer's Reviews</a></li>
+          </ul>
+        </div>
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="#">About Us with Love</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Special Deals & Offers</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h3>HELP CENTER</h3>
+          <ul>
+            <li><a href="#">Order Information</a></li>
+            <li><a href="#">Shipping Options</a></li>
+            <li><a href="#">International Shipping</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h3>RETURN & WARRANTY</h3>
+          <ul>
+            <li><a href="#">Returns & Exchange Policy</a></li>
+            <li><a href="#">Returns Center</a></li>
+            <li><a href="#">Warranty Policy</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">Warranty Repair Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright-text">Furnitur © Copyright 2026. All rights reserved.</p>
+
+        <!-- Social Icons -->
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>

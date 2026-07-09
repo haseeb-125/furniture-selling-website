@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Furnitur - Your Future Interior. High-quality furniture and lighting design.">
+  <title>FURNITUR | Your Future Interior</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-page">
+
+  <!-- Header & Navbar -->
+  <header class="main-header">
+    <div class="header-container">
+
+      <!-- Left Group: Logo + Search + Nav -->
+      <div class="header-left">
+        <!-- Logo -->
+        <a href="index.html" class="logo-container" id="nav-logo">
+          <img src="./assets/logo.png" alt="FURNITUR" class="logo-img">
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-input" placeholder="Search something...">
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">HOME</a></li>
+            <li><a href="search.html" class="nav-link">SHOP <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+            </li>
+            <li><a href="#" class="nav-link">BLOG</a></li>
+            <li><a href="#" class="nav-link">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Right Side: Actions -->
+      <div class="header-actions">
+
+        <!-- Wishlist -->
+        <button class="action-btn" id="wishlist-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+
+        <!-- Cart -->
+        <button class="action-btn" id="cart-btn" aria-label="Shopping Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" id="mobile-nav-menu">
+  <div class="mobile-nav-close" id="mobile-nav-close"><i class="fa-solid fa-xmark"></i></div>
+
+  <!-- Search inside mobile menu -->
+  <div class="mobile-search-wrapper">
+    <i class="fa-solid fa-magnifying-glass search-icon" id="mobile-search-icon"></i>
+    <input type="text" id="mobile-search-input" placeholder="Search products...">
+  </div>
+
+  <ul class="mobile-nav-links">
+    <li><a href="index.html" class="mobile-nav-link active">HOME</a></li>
+    <li><a href="search.html" class="mobile-nav-link">SHOP</a></li>
+    <li><a href="#" class="mobile-nav-link">BLOG</a></li>
+    <li><a href="#" class="mobile-nav-link">ABOUT US</a></li>
+  </ul>
+</div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="content-area">
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <span class="hero-subtitle">WELCOME TO OUR</span>
+        <h1 class="hero-title">FURNITURE<br>GALLERY</h1>
+        <p class="hero-desc-subtitle">BROWSE OUR SELECTIONS</p>
+      </div>
+    </section>
+
+
+    <!-- Categories Grid (Top Promo) -->
+    <section class="container section-spacing">
+      <div class="categories-promo-grid">
+
+        <!-- Card 1: Hanging Light — image top, text bottom -->
+        <div class="promo-card">
+          <div class="promo-card-image card1-image">
+            <img src="assets/hanging light 2.png" class="hanging-1" alt="Hanging Light1">
+            <img src="assets/hanging light 1.png" class="hanging-2" alt="Hanging Light2">
+          </div>
+          <div class="promo-card-content">
+            <h3 class="promo-title">HANGING LIGHT</h3>
+            <p class="promo-desc">Upgrade your space with our modern hanging light, featuring sleek lines,
+              energy-efficient LED lighting, and adjustable height.</p>
+            <a href="search.html?category=lamp" class="promo-link">View more <i class="fa-solid fa-angle-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2: Designed Sofa — text top-center, image bottom overflows -->
+        <div class="promo-card sage-theme">
+          <div class="promo-card-content card2-content">
+            <h3 class="promo-title">DESIGNED SOFA</h3>
+            <p class="promo-desc">Introducing our newest sofa, the perfect combination of style and comfort, designed to
+              elevate your living space and provide ultimate relaxation.</p>
+            <a href="search.html?category=sofa" class="promo-link">View more <i class="fa-solid fa-angle-right"></i></a>
+          </div>
+          <div class="promo-card-image card2-image">
+            <img src="assets/designed-sofa.png" alt="Designed Sofa">
+          </div>
+        </div>
+
+        <!-- Card 3: Nova Chair — text top-left, image bottom-right overflows -->
+        <div class="promo-card card3">
+          <div class="promo-card-content">
+            <h3 class="promo-title">NOVA CHAIR</h3>
+            <p class="promo-desc">A stylish and comfortable addition to any room, with its sleek design and plush
+              cushions creating the ultimate seating experience.</p>
+            <a href="search.html?category=chair" class="promo-link">View more <i
+                class="fa-solid fa-angle-right"></i></a>
+          </div>
+          <div class="promo-card-image card3-image">
+            <img src="assets/Chair.png" alt="Nova Chair">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section class="reviews-section section-spacing">
+      <div class="reviews-section-header">
+        <h2 class="section-title text-center">REVIEWED BY CUSTOMERS</h2>
+        <p class="section-subtitle text-center">WHAT OUR CUSTOMERS THINK ABOUT US?</p>
+      </div>
+
+      <!-- Offset Slide Carousel -->
+      <div class="reviews-carousel-wrapper">
+        <div class="reviews-carousel-track" id="reviews-track">
+
+          <!-- Slide Left Placeholder -->
+          <div class="review-slide-box prev-slide">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100"
+              alt="Emma L." class="avatar-box">
+            <div class="review-stars-box">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text-box">"The customer support was amazing. They helped me choose the right color for my
+              dining chairs. Highly professional!"</p>
+            <div class="review-author-box">
+              <h4>Emma Larson</h4>
+              <span>Oslo, Norway</span>
+            </div>
+          </div>
+
+          <!-- Slide 1 (Active) -->
+          <div class="review-slide-box active-slide">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100"
+              alt="Sarah J." class="avatar-box">
+            <div class="review-stars-box">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text-box">"The order delivery process was super fast. The design of this green velvet sofa
+              is exceptionally stunning and the build quality is absolutely premium! It fits my living room perfectly. I
+              highly recommend Furnitur."</p>
+            <div class="review-author-box">
+              <h4>Sarah Jenkins</h4>
+              <span>London, UK</span>
+            </div>
+          </div>
+
+          <!-- Slide Right Placeholder -->
+          <div class="review-slide-box next-slide">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100"
+              alt="David M." class="avatar-box">
+            <div class="review-stars-box">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text-box">"Excellent craftsmanship. The wood grain on my table looks absolutely beautiful.
+              Shipping was very secure."</p>
+            <div class="review-author-box">
+              <h4>David Miller</h4>
+              <span>New York, USA</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- Carousel Dots -->
+        <div class="carousel-dots-container">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- Featured Products Area -->
+    <section class="container section-spacing">
+      <h2 class="section-title text-center">FEATURED PRODUCTS</h2>
+      <!-- Tabs -->
+      <div class="featured-tabs">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="chair">Chair</button>
+        <button class="tab-btn" data-filter="sofa">Sofa</button>
+        <button class="tab-btn" data-filter="lamp">Hanging Light</button>
+      </div>
+      <!-- Grid (6 items dynamically populated) -->
+      <div class="products-grid" id="featured-products-container">
+        <!-- Dynamic rendering via JS -->
+      </div>
+    </section>
+
+    <!-- PROMO BANNER SECTION (3 Column layout) -->
+    <section class="promo-banner-section">
+      <div class="promo-banner-grid-3col">
+        <!-- Col 1: Title and Price -->
+        <div class="promo-col-left">
+          <h2 class="promo-banner-title">MORDERN BRONZE<br>HANGING LIGHT</h2>
+          <div class="promo-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="promo-old-price">$3252.41</p>
+          <div class="promo-price-tag">
+            <span class="promo-new-price">$2352.41</span>
+            <span class="promo-discount-badge">-30%</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Image -->
+        <div class="promo-col-center">
+          <img src="assets/bronze-hanging-light.png" alt="Modern Bronze Hanging Light" class="promo-center-img">
+        </div>
+
+        <!-- Col 3: Description and CTA -->
+        <div class="promo-col-right">
+          <p class="promo-desc-text">Stunning lighting fixture that combines contemporary style with timeless elegance.
+            Featuring a sleek and minimalist design, this hanging light is crafted from high-quality bronze and finished
+            with a smooth and lustrous surface.</p>
+          <button class="btn btn-primary btn-dark-bg" id="promo-buy-btn" data-id="p12">BUY NOW</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-choose-us-section section-spacing">
+      <div class="container">
+        <h2 class="section-title text-center">WHY CHOOSE US?</h2>
+
+        <div class="why-choose-grid">
+          <!-- Item 1 -->
+          <div class="why-item">
+            <div class="why-icon">
+              <img src="assets/png-icons/Global.png" alt="Global Delivery">
+            </div>
+            <h3>GLOBAL DELIVERY</h3>
+            <p>Experience Hassle-Free Shipping and Seamless Global Connectivity with Our Trustworthy and Efficient
+              Delivery Service, Bringing the World to Your Fingertips!</p>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="why-item">
+            <div class="why-icon">
+              <img src="assets/png-icons/package-box 1.png" alt="Free Shipping">
+            </div>
+            <h3>FREE SHIPPING</h3>
+            <p>Shop to Your Heart's Content Without Worrying About Shipping Costs: Our Free Shipping Service Delivers
+              Your Purchases with a Smile, Straight to Your Doorstep!</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="why-item">
+            <div class="why-icon">
+              <img src="assets/png-icons/phone 1.png" alt="24/7 Support">
+            </div>
+            <h3>24/7 SUPPORTING</h3>
+            <p>Shop with Confidence Anytime, Anywhere: Our Free Shipping Service Comes with 24/7 Support to Ensure Your
+              Packages Arrive Safely and On Time!</p>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="why-item">
+            <div class="why-icon">
+              <img src="assets/png-icons/email 1.png" alt="Daily Email">
+            </div>
+            <h3>DAILY EMAIL</h3>
+            <p>Stay Up-to-Date with Your Deliveries: Enjoy the Convenience of Daily Email Updates with Our Free Shipping
+              Service, Making Your Online Shopping Experience Even More Enjoyable!</p>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="why-item">
+            <div class="why-icon">
+              <img src="assets/png-icons/credit-card 1.png" alt="Easy Payment">
+            </div>
+            <h3>EASY PAYMENT</h3>
+            <p>Shop and Pay with Ease: Our Free Shipping Service Not Only Delivers Your Packages for Free, but Also
+              Offers Easy Payment Options, Making Your Shopping Experience a Breeze!</p>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="why-item">
+            <div class="why-icon">
+              <img src="assets/png-icons/badge (1) 1.png" alt="Monthly  Voucher">
+            </div>
+            <h3>MONTHLY VOUCHER</h3>
+            <p>More Than Just Free Shipping: Our Service Rewards Your Loyalty with Monthly Vouchers, Giving You More
+              Reasons to Shop and Save on Your Favorite Products!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PERSISTENT SHOPPING CART SIDE DRAWER -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2>YOUR CART (<span id="cart-drawer-count">0</span>)</h2>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Cart Items Container -->
+    <div class="cart-items-container" id="cart-items-list">
+      <!-- Renders dynamically in JS -->
+    </div>
+
+    <!-- Cart Footer (Calculations & Checkout) -->
+    <div class="cart-drawer-footer" id="cart-summary-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="subtotal-price" id="cart-total-price">$0.00</span>
+      </div>
+      <p class="cart-shipping-notice">Shipping and taxes calculated at checkout.</p>
+      <button class="btn btn-primary checkout-btn" id="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- FOOTER SECTION -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <!-- Main Footer Grid -->
+      <div class="footer-grid">
+        <!-- Col 1 -->
+        <div class="footer-col">
+          <h3>CUSTOMER SERVICE</h3>
+          <ul>
+            <li><a href="#">Help & FAQs</a></li>
+            <li><a href="#">Return & Refund</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Customs and Taxes</a></li>
+            <li><a href="#">Customer's Reviews</a></li>
+          </ul>
+        </div>
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="#">About Us with Love</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Special Deals & Offers</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h3>HELP CENTER</h3>
+          <ul>
+            <li><a href="#">Order Information</a></li>
+            <li><a href="#">Shipping Options</a></li>
+            <li><a href="#">International Shipping</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h3>RETURN & WARRANTY</h3>
+          <ul>
+            <li><a href="#">Returns & Exchange Policy</a></li>
+            <li><a href="#">Returns Center</a></li>
+            <li><a href="#">Warranty Policy</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">Warranty Repair Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright-text">Furnitur © Copyright 2026. All rights reserved.</p>
+
+        <!-- Social Icons -->
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="app.js"></script>
+</body>
+
+</html>

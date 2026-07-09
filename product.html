@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Furnitur - Product Detail" />
+  <title id="page-title">FURNITUR | Product</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Product-specific CSS -->
+  <link rel="stylesheet" href="product.css" />
+</head>
+
+<body class="product-page">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-left">
+        <a href="index.html" class="logo-container">
+          <img src="./assets/logo.png" alt="FURNITUR" class="logo-img" />
+        </a>
+
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="search-input" placeholder="Search something..." />
+        </div>
+
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">HOME</a></li>
+            <li><a href="search.html" class="nav-link">SHOP <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+            </li>
+            <li><a href="#" class="nav-link">BLOG</a></li>
+            <li><a href="#" class="nav-link">ABOUT US</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header-actions">
+        <button class="action-btn" id="wishlist-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+        <button class="action-btn" id="cart-btn" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav-menu">
+    <div class="mobile-nav-close" id="mobile-nav-close"><i class="fa-solid fa-xmark"></i></div>
+
+    <!-- Search inside mobile menu -->
+    <div class="mobile-search-wrapper">
+      <i class="fa-solid fa-magnifying-glass search-icon" id="mobile-search-icon"></i>
+      <input type="text" id="mobile-search-input" placeholder="Search products...">
+    </div>
+
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link active">HOME</a></li>
+      <li><a href="search.html" class="mobile-nav-link">SHOP</a></li>
+      <li><a href="#" class="mobile-nav-link">BLOG</a></li>
+      <li><a href="#" class="mobile-nav-link">ABOUT US</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="content-area">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="index.html" class="breadcrumb-home">Home</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <a href="search.html" class="breadcrumb-mid">Furniture</a>
+        <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="breadcrumb-current" id="product-breadcrumb-name">Product</span>
+      </div>
+
+      <!-- ═══ PRODUCT HERO ═══ -->
+      <section class="product-hero-grid">
+
+        <!-- Gallery -->
+        <div class="product-gallery">
+          <div class="gallery-thumbs" id="gallery-thumbs"></div>
+          <div class="gallery-main">
+            <img id="product-main-image" src="" alt="Product image" />
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info-panel">
+          <h1 class="product-detail-title" id="product-title">Loading...</h1>
+
+          <div class="product-meta-row">
+            <div class="product-detail-stars" id="product-detail-stars"></div>
+            <span class="sale-badge hidden" id="sale-badge">ON SALE</span>
+          </div>
+
+          <p class="product-social-proof" id="product-social-proof"></p>
+
+          <hr class="divider" />
+
+          <div class="variant-controls">
+            <div class="variant-group">
+              <label for="variant-type-select">Type:</label>
+              <select id="variant-type-select">
+                <option value="Short">Short</option>
+                <option value="Regular">Regular</option>
+                <option value="Long" selected>Long</option>
+              </select>
+            </div>
+
+            <div class="variant-group">
+              <label>+ Number:</label>
+              <div class="qty-stepper">
+                <button type="button" id="qty-minus-detail" aria-label="Decrease quantity">-</button>
+                <span id="qty-value-detail">1</span>
+                <button type="button" id="qty-plus-detail" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="color-swatches" id="color-swatches">
+              <button class="swatch" style="background:#7fa9d1" data-color="Blue" aria-label="Blue"></button>
+              <button class="swatch active" style="background:#2f4f42" data-color="Green" aria-label="Green"></button>
+              <button class="swatch" style="background:#9aa0a6" data-color="Grey" aria-label="Grey"></button>
+              <button class="swatch" style="background:#6b3d57" data-color="Plum" aria-label="Plum"></button>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <div class="product-price-actions">
+            <span class="product-detail-price" id="product-detail-price">$0.00</span>
+            <div class="detail-action-buttons">
+              <button class="btn btn-dark" id="detail-buy-now-btn">BUY NOW</button>
+              <button class="btn btn-outline-detail" id="detail-add-cart-btn">ADD TO CART</button>
+              <button class="btn-icon-detail" id="detail-wishlist-btn" aria-label="Add to wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ BEST COMBINED WITH ═══ -->
+      <section class="best-combined-section">
+        <h2>BEST COMBINED WITH:</h2>
+        <p class="subtitle">THESE COMBINATION WILL MAKE YOUR HOME TONE - SUR - TONE</p>
+        <div class="combined-grid" id="combined-products-container"></div>
+      </section>
+
+      <!-- ═══ PRODUCT DETAIL / DELIVERY TABS ═══ -->
+      <section class="product-tabs-section">
+        <div class="tabs-header">
+          <button class="tab-link active" data-tab="detail">PRODUCT DETAIL</button>
+          <button class="tab-link" data-tab="delivery">DELIVERY AND RETURN</button>
+        </div>
+
+        <div class="tab-panel" id="tab-panel-detail">
+          <div class="detail-grid">
+            <div class="detail-desc">
+              <h3>DESCRIPTION</h3>
+              <p id="product-description-text"></p>
+            </div>
+            <div class="detail-features">
+              <h3>FITS AND FEATURES</h3>
+              <ol id="product-features-list"></ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel hidden" id="tab-panel-delivery">
+          <div class="detail-grid">
+            <div class="detail-desc">
+              <h3>DELIVERY</h3>
+              <p>Orders are processed within 1-2 business days and shipped via our trusted logistics partners. Estimated
+                delivery time is 5-10 business days depending on your location. Free shipping applies automatically
+                where noted on the product.</p>
+            </div>
+            <div class="detail-desc">
+              <h3>RETURNS</h3>
+              <p>Not the right fit for your space? You can return any unused item in its original packaging within 30
+                days of delivery for a full refund. Reach out to our customer service team to start a return.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ REVIEWS ═══ -->
+      <section class="reviews-section">
+        <div class="reviews-grid">
+          <div class="review-form-col">
+            <h2>YOUR REVIEW</h2>
+            <p class="review-form-sub" id="review-form-sub">Share your thoughts on this product</p>
+            <form id="review-form">
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your E-mail" required />
+              <select id="review-star-select" required>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+              </select>
+              <textarea placeholder="This product is..." required></textarea>
+              <button class="btn btn-dark" type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div class="review-list-col" id="reviews-list"></div>
+        </div>
+      </section>
+
+      <!-- ═══ WHY CHOOSE US ═══ -->
+      <section class="why-choose-us-section section-spacing">
+        <div class="container">
+          <h2 class="section-title text-center">WHY CHOOSE US?</h2>
+
+          <div class="why-choose-grid">
+            <!-- Item 1 -->
+            <div class="why-item">
+              <div class="why-icon">
+                <img src="assets/png-icons/Global.png" alt="Global Delivery">
+              </div>
+              <h3>GLOBAL DELIVERY</h3>
+              <p>Experience Hassle-Free Shipping and Seamless Global Connectivity with Our Trustworthy and Efficient
+                Delivery Service, Bringing the World to Your Fingertips!</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="why-item">
+              <div class="why-icon">
+                <img src="assets/png-icons/package-box 1.png" alt="Free Shipping">
+              </div>
+              <h3>FREE SHIPPING</h3>
+              <p>Shop to Your Heart's Content Without Worrying About Shipping Costs: Our Free Shipping Service Delivers
+                Your Purchases with a Smile, Straight to Your Doorstep!</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="why-item">
+              <div class="why-icon">
+                <img src="assets/png-icons/phone 1.png" alt="24/7 Support">
+              </div>
+              <h3>24/7 SUPPORTING</h3>
+              <p>Shop with Confidence Anytime, Anywhere: Our Free Shipping Service Comes with 24/7 Support to Ensure
+                Your Packages Arrive Safely and On Time!</p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="why-item">
+              <div class="why-icon">
+                <img src="assets/png-icons/email 1.png" alt="Daily Email">
+              </div>
+              <h3>DAILY EMAIL</h3>
+              <p>Stay Up-to-Date with Your Deliveries: Enjoy the Convenience of Daily Email Updates with Our Free
+                Shipping Service, Making Your Online Shopping Experience Even More Enjoyable!</p>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="why-item">
+              <div class="why-icon">
+                <img src="assets/png-icons/credit-card 1.png" alt="Easy Payment">
+              </div>
+              <h3>EASY PAYMENT</h3>
+              <p>Shop and Pay with Ease: Our Free Shipping Service Not Only Delivers Your Packages for Free, but Also
+                Offers Easy Payment Options, Making Your Shopping Experience a Breeze!</p>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="why-item">
+              <div class="why-icon">
+                <img src="assets/png-icons/badge (1) 1.png" alt="Monthly  Voucher">
+              </div>
+              <h3>MONTHLY VOUCHER</h3>
+              <p>More Than Just Free Shipping: Our Service Rewards Your Loyalty with Monthly Vouchers, Giving You More
+                Reasons to Shop and Save on Your Favorite Products!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /container -->
+
+    <!-- ═══ PROMO STRIP (full width) ═══ -->
+    <section class="promo-strip-section">
+      <div class="container promo-strip-grid">
+        <div class="promo-strip-text">
+          <img src="./assets/logo.png" alt="FURNITUR" class="promo-strip-logo" />
+          <h3>SLEEKLINE MODULUS<br />MORDERN SOFA</h3>
+          <button class="btn btn-dark" id="promo-strip-btn">VIEW ALL PROMO</button>
+        </div>
+        <div class="promo-strip-image">
+          <img src="assets/products/chair-blue.png" alt="Sleekline Modulus Modern Sofa" />
+        </div>
+        <ul class="promo-strip-features">
+          <li><i class="fa-regular fa-lightbulb"></i> True marvel of engineering and design, durable frame that can
+            support the heaviest of loads.</li>
+          <li><i class="fa-solid fa-screwdriver-wrench"></i> Includes high-quality fabrics, metal frames, and innovative
+            composites.</li>
+          <li><i class="fa-regular fa-envelope-open"></i> Stylish addition to your living room, or a functional piece
+            for your outdoor patio.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Cart Drawer Overlay -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2>YOUR CART (<span id="cart-drawer-count">0</span>)</h2>
+      <button class="cart-drawer-close" id="cart-close-btn" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items-container" id="cart-items-list"></div>
+    <div class="cart-drawer-footer" id="cart-summary-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="subtotal-price" id="cart-total-price">$0.00</span>
+      </div>
+      <p class="cart-shipping-notice">Shipping and taxes calculated at checkout.</p>
+      <button class="btn btn-primary checkout-btn" id="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>CUSTOMER SERVICE</h3>
+          <ul>
+            <li><a href="#">Help & FAQs</a></li>
+            <li><a href="#">Return & Refund</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Customs and Taxes</a></li>
+            <li><a href="#">Customer's Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="#">About Us with Love</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Special Deals & Offers</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>HELP CENTER</h3>
+          <ul>
+            <li><a href="#">Order Information</a></li>
+            <li><a href="#">Shipping Options</a></li>
+            <li><a href="#">International Shipping</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>RETURN & WARRANTY</h3>
+          <ul>
+            <li><a href="#">Returns & Exchange Policy</a></li>
+            <li><a href="#">Returns Center</a></li>
+            <li><a href="#">Warranty Policy</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">Warranty Repair Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">Furnitur © Copyright 2026. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
